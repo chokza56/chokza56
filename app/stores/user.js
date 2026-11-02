@@ -1,5 +1,5 @@
-
 import { defineStore } from 'pinia'
+import axios from 'axios'
 
 export const useUserStore = defineStore('user', {
   state: () => ({
@@ -7,8 +7,15 @@ export const useUserStore = defineStore('user', {
   }),
 
   actions: {
-    LoadUser() {
-      console.log('กำลังโหลดข้อมูลผู้ใช้')
+    async LoadUser() {
+      const token = useCookie('token')
+      const { public: { apiBase } } = useRuntimeConfig()
+      if (!token.value) return
+
+      const res = await axios.get(`${apiBase}/api/auth/me`, {
+        headers: { Authorization: `Bearer ${token.value}` }
+      })
+      this.user = res.data
     },
 
     Logout() {

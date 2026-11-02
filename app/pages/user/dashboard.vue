@@ -3,29 +3,24 @@
     <!-- Navbar แถบด้านบน -->
     <div class="bg-white border-b border-gray-200 px-6 py-3 flex justify-between items-center sticky top-0 z-50 shadow-sm">
       <div class="flex items-center space-x-2">
-        <span class="text-xl font-bold text-blue-600">📊 ระบบประเมินผล</span>
+        <span class="text-2xl font-bold text-blue-600">📊 ระบบประเมินผล</span>
       </div>
       
       <!-- ฝั่งขวา: รูปโปรไฟล์และปุ่ม Logout -->
       <div class="flex items-center space-x-4">
         <div class="flex items-center space-x-2">
-          <!-- รูปโปรไฟล์เริ่มต้น (ถ้ามีลิงก์รูปจริงสามารถนำมาใส่ใน src ได้) -->
-          <img src="https://unsplash.com" alt="Profile" class="w-9 h-9 rounded-full object-cover border border-gray-200">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS11Yp9ac3eFtb8dlDG0Gsgihz5ddDDERdKtTKuM0O5Mw&s=10" alt="Profile" class="w-9 h-9 rounded-full object-cover border border-gray-200">
           <span class="text-sm font-medium text-gray-700 hidden sm:inline">Username</span>
         </div>
         <!-- ปุ่ม Logout -->
-        <button 
-          @click="logout" 
-          class="flex items-center space-x-1 text-sm font-medium text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-xl transition duration-200"
-        >
-          <span>🚪 ออกจากระบบ</span>
+        <button @click="logout" class="bg-red-300 hover:bg-red-700 text-white px-4 py-2 rounded-md transition text-sm">
+          🚪 ออกจากระบบ
         </button>
       </div>
     </div>
 
-    <!-- ส่วนเนื้อหาเดิม (Main Content Area) -->
+    <!-- ส่วนเนื้อหาหลัก -->
     <div class="p-6">
-      <!-- Header ส่วนหัวภายในหน้า -->
       <div class="flex justify-between items-center mb-6">
         <div>
           <h1 class="text-2xl font-bold text-gray-800">ยินดีต้อนรับสู่ระบบประเมิน</h1>
@@ -36,35 +31,26 @@
         </div>
       </div>
 
-      <!-- ส่วนของสถิติ / การ์ดสรุปข้อมูล (Stats Cards) -->
+      <!-- สถิติ / การ์ดสรุปข้อมูล -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-        <!-- การ์ดที่ 1 -->
         <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
-          <div class="p-3 bg-blue-100 text-blue-600 rounded-xl text-2xl">
-            📊
-          </div>
+          <div class="p-3 bg-blue-100 text-blue-600 rounded-xl text-2xl">📊</div>
           <div>
             <p class="text-sm text-gray-500 font-medium">ทำแบบประเมินแล้ว</p>
             <h3 class="text-2xl font-bold text-gray-800">12 ครั้ง</h3>
           </div>
         </div>
 
-        <!-- การ์ดที่ 2 -->
         <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
-          <div class="p-3 bg-green-100 text-green-600 rounded-xl text-2xl">
-            ✅
-          </div>
+          <div class="p-3 bg-green-100 text-green-600 rounded-xl text-2xl">✅</div>
           <div>
             <p class="text-sm text-gray-500 font-medium">ประเมินผ่านเกณฑ์</p>
             <h3 class="text-2xl font-bold text-gray-800">10 ครั้ง</h3>
           </div>
         </div>
 
-        <!-- การ์ดที่ 3 -->
         <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
-          <div class="p-3 bg-amber-100 text-amber-600 rounded-xl text-2xl">
-            ⏳
-          </div>
+          <div class="p-3 bg-amber-100 text-amber-600 rounded-xl text-2xl">⏳</div>
           <div>
             <p class="text-sm text-gray-500 font-medium">รอการตรวจสอบ</p>
             <h3 class="text-2xl font-bold text-gray-800">2 ครั้ง</h3>
@@ -72,9 +58,8 @@
         </div>
       </div>
 
-      <!-- ส่วนเนื้อหาหลัก -->
+      <!-- ตารางและเมนูลัด -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <!-- ตารางประวัติการประเมินล่าสุด -->
         <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 lg:col-span-2">
           <h2 class="text-lg font-bold text-gray-800 mb-4">ประวัติการประเมินล่าสุด</h2>
           <div class="overflow-x-auto">
@@ -109,7 +94,6 @@
           </div>
         </div>
 
-        <!-- เมนูลัด -->
         <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
           <h2 class="text-lg font-bold text-gray-800 mb-4">เข้าทำแบบประเมินด่วน</h2>
           <div class="space-y-3">
